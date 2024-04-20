@@ -19,10 +19,11 @@ class LoginPage extends GetView<LoginController> {
     return Scaffold(
       body: Stack(
         children: [
+          
           Container(
             decoration: const BoxDecoration(
               image: DecorationImage(
-                image: AssetImage("assets/images/test2.gif"),
+                image: AssetImage("assets/images/test4.jpg",),
                 fit: BoxFit.cover,
               ),
             ),
@@ -37,7 +38,7 @@ class LoginPage extends GetView<LoginController> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       const SizedBox(
-                        height: 92,
+                        height: 140,
                       ),
                       const Padding(
                         padding: EdgeInsets.symmetric(

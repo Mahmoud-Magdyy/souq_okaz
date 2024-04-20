@@ -20,7 +20,7 @@ class RegistrationPage extends  GetView<RegistrationController> {
         children: [
           Container(
             decoration:const BoxDecoration(
-              image: DecorationImage(image: AssetImage("assets/images/splash.gif"), fit: BoxFit.cover,),
+              image: DecorationImage(image: AssetImage("assets/images/test4.jpg"), fit: BoxFit.cover,),
             ),
           ),
           SafeArea (
@@ -34,7 +34,7 @@ class RegistrationPage extends  GetView<RegistrationController> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const SizedBox(height: 100,),
+                        const SizedBox(height: 140,),
                           const Padding(
                             padding: EdgeInsets.symmetric(horizontal: 34.0,vertical: 32),
                             child: Text("Register",style: MyTextStyles.hOneTextStyle,),
