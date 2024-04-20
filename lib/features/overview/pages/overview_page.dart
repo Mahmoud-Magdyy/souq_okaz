@@ -63,8 +63,8 @@ class OverviewPage extends GetView<OverviewController> {
                         );
                       }).toList(),
                     ),
-                    SizedBox(height: 20,),
-                    Padding(
+                    const SizedBox(height: 20,),
+                    const Padding(
                       padding: EdgeInsets.all(5.0),
                       child: Text("سوق عكاظ، هو أهم أسواق العرب وأشهرها، يقع في شمال شرقي مدينة الطائف، وهو يحمل أهمية تاريخية حيث كان العرب يجتمعون فيه للبيع والشراء، ويستمعون إلى الشعراء والخطباء، وقد سجل التاريخ لسوق عكاظ دوراً أدبياً بارزاً في الجاهلية واستمر السوق إلى عام 129هـ",
 
@@ -84,14 +84,14 @@ class OverviewPage extends GetView<OverviewController> {
                             onTap: (){
                               Get.dialog(AlertDialog(
                                 title: Text(controller.poetsTitle[index]),
-                                content: Text(controller.poets[index],style: TextStyle(fontWeight: FontWeight.bold,fontSize: 16),),
+                                content: Text(controller.poets[index],style: const TextStyle(fontWeight: FontWeight.bold,fontSize: 16),),
                                 actions: [
                                   TextButton(onPressed: (){
                                      Clipboard.setData( ClipboardData(text: controller.poets[index]));
-                                  }, child: Text("Copy")),
+                                  }, child: const Text("Copy")),
                                   TextButton(onPressed: (){
                                     Get.back();
-                                  }, child: Text("Cancel"))
+                                  }, child: const Text("Cancel"))
                                 ],
                               ));
                             },

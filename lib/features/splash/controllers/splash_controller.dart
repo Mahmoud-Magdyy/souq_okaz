@@ -5,7 +5,7 @@ class SplashController extends GetxController {
   @override
   void onReady (){
     super.onReady();
-    Get.off(()=>const LoginPage());
+    Get.off(()=> LoginPage());
     // Future.delayed(const Duration(seconds: 9),()=>Get.off(()=>const LoginPage()));
   }
 }

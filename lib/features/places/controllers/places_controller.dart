@@ -9,7 +9,7 @@ class PlacesController extends GetxController {
   @override
   void onInit() {
     homeWidgets.addAll([
-      const RestaurantsPage(),
+       const RestaurantsPage(),
       const TheatersPage(),
       const ShopsPage(),
     ]);

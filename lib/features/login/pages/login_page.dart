@@ -1,3 +1,4 @@
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../core/shared/styles/my_colors.dart';
@@ -9,7 +10,8 @@ import '../../registration/pages/registration_page.dart';
 import '../controllers/login_controller.dart';
 
 class LoginPage extends GetView<LoginController> {
-  const LoginPage({super.key});
+  LoginPage({super.key});
+  final player = AudioPlayer();
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +22,7 @@ class LoginPage extends GetView<LoginController> {
           Container(
             decoration: const BoxDecoration(
               image: DecorationImage(
-                image: AssetImage("assets/images/splash.gif"),
+                image: AssetImage("assets/images/test2.gif"),
                 fit: BoxFit.cover,
               ),
             ),
@@ -75,7 +77,7 @@ class LoginPage extends GetView<LoginController> {
                         padding: const EdgeInsets.symmetric(horizontal: 20),
                         child: Obx(
                           () => controller.isLoading.value
-                              ? const Center(child: CircularProgressIndicator())
+                              ? const Center(child: CircularProgressIndicator(color: MyColors.primaryColor,))
                               : MyButton(
                                   text: "Sign In",
                                   withArrow: false,
@@ -95,12 +97,13 @@ class LoginPage extends GetView<LoginController> {
                           TextButton(
                               onPressed: () {
                                 Get.off(() => const RegistrationPage());
+                                
                               },
                               child: const Text("SIGN UP",
                                   style:
                                       TextStyle(color: MyColors.primaryColor))),
                         ],
-                      )
+                      ),
                     ],
                   ),
                 ),

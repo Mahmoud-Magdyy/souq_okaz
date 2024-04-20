@@ -34,7 +34,7 @@ class RegistrationPage extends  GetView<RegistrationController> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        SizedBox(height: 100,),
+                        const SizedBox(height: 100,),
                           const Padding(
                             padding: EdgeInsets.symmetric(horizontal: 34.0,vertical: 32),
                             child: Text("Register",style: MyTextStyles.hOneTextStyle,),

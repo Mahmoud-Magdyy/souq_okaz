@@ -29,16 +29,20 @@ class _MyTextFieldState extends State<MyTextField> {
       children: [
         Padding(
           padding: const EdgeInsets.only(left:16.0,bottom: 4),
-          child: Text(widget.label,style: TextStyle(color: Colors.white),),
+          child: Text(widget.label,style:const TextStyle(color: Colors.white),),
         ),
         TextFormField(
+          
           keyboardType: widget.textInputType,
           obscureText: isObscure,
           onChanged: widget.onTyping,
+          
           validator:widget.validator == null ? null : (value)=> widget.validator!(value),
           decoration: InputDecoration(
-            contentPadding: const EdgeInsets.symmetric(horizontal: 50,vertical: 21),
-            fillColor: Color.fromRGBO(189, 189, 189, 1.0),
+            
+            // contentPadding: const EdgeInsets.symmetric(horizontal: 50,vertical: 21),
+            // fillColor:const Color.fromRGBO(189, 189, 189, 1.0),
+            fillColor: Colors.white.withOpacity(0.5),
             floatingLabelStyle: const TextStyle(color: MyColors.primaryColor),
             suffixIcon:widget.textInputType != TextInputType.visiblePassword ?
             null : IconButton(
@@ -47,15 +51,18 @@ class _MyTextFieldState extends State<MyTextField> {
                     isObscure = !isObscure;
                   });
                 },
-                icon: Icon(isObscure ? Icons.visibility_off: Icons.visibility)),
+                icon: Icon(isObscure ? Icons.visibility_off: Icons.visibility,color: MyColors.primaryColor,)),
             filled: true,
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(25.0),
               borderSide: const BorderSide(
-                color: Colors.white
+                color:MyColors.primaryColor
+                
+                //  Colors.white
               )
             ),
             focusedBorder: OutlineInputBorder(
+
                 borderRadius: BorderRadius.circular(25.0),
                 borderSide: const BorderSide(
                     color: MyColors.primaryColor
@@ -64,7 +71,7 @@ class _MyTextFieldState extends State<MyTextField> {
             enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(25.0),
                 borderSide: const BorderSide(
-                    color: Colors.white
+                    color: MyColors.primaryColor
                 )
             ),
           ),
