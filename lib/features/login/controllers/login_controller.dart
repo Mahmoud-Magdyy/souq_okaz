@@ -9,7 +9,7 @@ import '../../home/pages/home_page.dart';
 class LoginController extends GetxController {
   final AudioPlayer _audioPlayer = AudioPlayer();
   // final String _soundPath = "assets/sound/soundQaseda.mp3";
-
+ RxBool hasWindowFocus = false.obs;
   late final TextEditingController emailController;
   late final TextEditingController passwordController;
   final isLoading = false.obs;
@@ -28,6 +28,10 @@ class LoginController extends GetxController {
   void onClose() {
     super.onClose();
     _stopSound();
+   if(!hasWindowFocus.value){
+     _audioPlayer.stop();
+   }
+    
   }
 
   void _playSound() async {
