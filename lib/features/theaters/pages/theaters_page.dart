@@ -46,18 +46,42 @@ class TheatersPage extends GetView<TheatersController> {
                         children: [
                           Padding(
                             padding: const EdgeInsets.all(1.0),
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(10.0),
-                              child: Image.asset(
-                                "assets/images/let.jfif",
-                                height: 148,
-                                width: double.infinity,
-                                fit: BoxFit.fitWidth,
-                              ),
-                            ),
+                            child: Stack(
+                              children: [
+                                ClipRRect(
+                                    borderRadius: BorderRadius.circular(12),
+                                    child: const FadeInImage(
+                                        fit: BoxFit.fill,
+                                        height: 148,
+                                        width: double.infinity,
+                                        placeholder: AssetImage(
+                                            'assets/images/new_souq_okaz_images/2.png'),
+                                        image: AssetImage(
+                                            'assets/images/new_souq_okaz_images/2.png'))),
+                                Positioned(
+                                    bottom: 0,
+                                    right: 0,
+                                    left: 0,
+                                    child: Container(
+                                        decoration: const BoxDecoration(
+                                          borderRadius: BorderRadius.only(
+                                              bottomLeft: Radius.circular(12),
+                                              bottomRight: Radius.circular(12)),
+                                          color: Colors.black54,
+                                        ),
+                                        padding: const EdgeInsets.symmetric(
+                                            vertical: 4, horizontal: 15),
+                                        child: const Center(
+                                            child: Text(
+                                              'المعارض الثقافيه',
+                                              style: TextStyle(
+                                                  fontSize: 22,
+                                                  fontWeight: FontWeight.bold,
+                                                  color: Colors.white),
+                                            )))),
+                              ],
+                            )
                           )
-                          // Image.asset( "assets/images/exhibition.png",width: 90,height: 100,),
-                          // const Text("معارض ثقافية",style: TextStyle(fontSize: 22,fontWeight: FontWeight.bold,color: Colors.white),),
                         ],
                       )),
                 ),
@@ -71,18 +95,42 @@ class TheatersPage extends GetView<TheatersController> {
                       children: [
                         Padding(
                           padding: const EdgeInsets.all(1.0),
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(10.0),
-                            child: Image.asset(
-                              "assets/images/poet.jfif",
-                              height: 148,
-                              width: double.infinity,
-                              fit: BoxFit.fitWidth,
-                            ),
-                          ),
+                          child:Stack(
+                            children: [
+                              ClipRRect(
+                                  borderRadius: BorderRadius.circular(12),
+                                  child: const FadeInImage(
+                                      fit: BoxFit.fill,
+                                      height: 148,
+                                      width: double.infinity,
+                                      placeholder: AssetImage(
+                                          'assets/images/new_souq_okaz_images/1.png'),
+                                      image: AssetImage(
+                                          'assets/images/new_souq_okaz_images/1.png'))),
+                              Positioned(
+                                  bottom: 0,
+                                  right: 0,
+                                  left: 0,
+                                  child: Container(
+                                      decoration: const BoxDecoration(
+                                        borderRadius: BorderRadius.only(
+                                            bottomLeft: Radius.circular(12),
+                                            bottomRight: Radius.circular(12)),
+                                        color: Colors.black54,
+                                      ),
+                                      padding: const EdgeInsets.symmetric(
+                                          vertical: 4, horizontal: 15),
+                                      child: const Center(
+                                          child: Text(
+                                            'مسابقة الشعراء',
+                                            style: TextStyle(
+                                                fontSize: 22,
+                                                fontWeight: FontWeight.bold,
+                                                color: Colors.white),
+                                          )))),
+                            ],
+                          )
                         )
-                        // Image.asset( "assets/images/poem.png",width: 90,height: 100,),
-                        // const Text("مسابقة الشعراء",style: TextStyle(fontSize: 22,fontWeight: FontWeight.bold,color: Colors.white),),
                       ],
                     ),
                   ),
@@ -99,29 +147,59 @@ class TheatersPage extends GetView<TheatersController> {
               height: 183,
               width: MediaQuery.of(context).size.width,
               child: Padding(
-                padding: const EdgeInsets.all(1.0),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(10.0),
-                  child: Image.asset(
-                    "assets/images/horse.jpg",
-                    fit: BoxFit.fitWidth,
-                    height: 188,
-                    width: MediaQuery.of(context).size.width,
+                  padding: const EdgeInsets.all(1.0),
+                  child: Stack(
+                    children: [
+                      ClipRRect(
+                          borderRadius: BorderRadius.circular(12),
+                          child: const FadeInImage(
+                              fit: BoxFit.fill,
+                              height: 200,
+                              width: double.infinity,
+                              placeholder: AssetImage(
+                                  'assets/images/new_souq_okaz_images/تصميم بدون عنوان (6).png'),
+                              image: AssetImage(
+                                  'assets/images/new_souq_okaz_images/تصميم بدون عنوان (6).png'))),
+                      Positioned(
+                          bottom: 0,
+                          right: 0,
+                          left: 0,
+                          child: Container(
+                              decoration: const BoxDecoration(
+                                borderRadius: BorderRadius.only(
+                                    bottomLeft: Radius.circular(12),
+                                    bottomRight: Radius.circular(12)),
+                                color: Colors.black54,
+                              ),
+                              padding: const EdgeInsets.symmetric(
+                                  vertical: 10, horizontal: 44),
+                              child: const Center(
+                                  child: Text(
+                                'عرض فنون الخيل',
+                                style: TextStyle(
+                                    fontSize: 22,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white),
+                              )))),
+                    ],
+                  )
+
+                  // Stack(
+                  //   alignment: AlignmentDirectional.topCenter,
+                  //   children: [
+                  //     ClipRRect(
+                  //       borderRadius: BorderRadius.circular(10.0),
+                  //       child: Image.asset(
+                  //         "assets/images/new_souq_okaz_images/تصميم بدون عنوان (6).png",
+                  //         fit: BoxFit.fitWidth,
+                  //         height: 188,
+                  //         width: MediaQuery.of(context).size.width,
+                  //       ),
+                  //     ),
+                  //     Text('عرض فنون الخيل',style: TextStyle(fontSize: 22,fontWeight: FontWeight.bold,color: Colors.white),)
+                  //   ],
+                  // )
                   ),
-                ),
-              ),
-              // Row (
-              //   mainAxisAlignment: MainAxisAlignment.end,
-              //   children: [
-              //     Image.asset( "assets/images/horse.jfif",
-              //       // fit: BoxFit.fitWidth,
-              //       width: MediaQuery.of(context).size.width-8,
-              //     ),
-              //     // const Text('عرض فنون الخيل',style: TextStyle(fontSize: 22,fontWeight: FontWeight.bold,color: Colors.white),),
-              //     // const SizedBox(width:40,),
-              //     // Image.asset( "assets/images/horse.png", fit: BoxFit.cover),
-              //   ],
-              // ),
             ),
           )
         ],
