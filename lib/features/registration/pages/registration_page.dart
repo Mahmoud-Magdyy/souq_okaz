@@ -20,7 +20,7 @@ class RegistrationPage extends  GetView<RegistrationController> {
         children: [
           Container(
             decoration:const BoxDecoration(
-              image: DecorationImage(image: AssetImage("assets/images/test4.jpg"), fit: BoxFit.cover,),
+              image: DecorationImage(image: AssetImage("assets/images/splash.gif"), fit: BoxFit.cover,),
             ),
           ),
           SafeArea (
