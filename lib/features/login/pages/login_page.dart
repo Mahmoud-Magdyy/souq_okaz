@@ -1,3 +1,4 @@
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../core/shared/styles/my_colors.dart';
@@ -9,8 +10,10 @@ import '../../registration/pages/registration_page.dart';
 import '../controllers/login_controller.dart';
 
 class LoginPage extends GetView<LoginController> {
-  const LoginPage({super.key});
-
+  
+  LoginPage({super.key});
+  final player = AudioPlayer();
+  
   @override
   Widget build(BuildContext context) {
     Get.put(LoginController());
@@ -95,11 +98,32 @@ class LoginPage extends GetView<LoginController> {
                           TextButton(
                               onPressed: () {
                                 Get.off(() => const RegistrationPage());
+                                player.dispose();
                               },
                               child: const Text("SIGN UP",
                                   style:
                                       TextStyle(color: MyColors.primaryColor))),
                         ],
+                      ),
+                      Center(
+                        child: Row(
+                          children: [
+                            IconButton(
+                              onPressed: () {
+                                player
+                                    .play(AssetSource("sound/soundQaseda.mp3"));
+                                player.setVolume(100);
+                              },
+                              icon: const Icon(Icons.play_arrow),
+                            ),
+                            IconButton(
+                              onPressed: () {
+                                player.pause();
+                              },
+                              icon: const Icon(Icons.stop),
+                            ),
+                          ],
+                        ),
                       )
                     ],
                   ),
