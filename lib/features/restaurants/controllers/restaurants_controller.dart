@@ -18,4 +18,5 @@ class RestaurantsController extends GetxController {
    restaurantList.value = await Get.find<UserRepository>().getRestaurants ();
     isLoading.value = false;
   }
+
 }
