@@ -77,7 +77,7 @@ class LoginPage extends GetView<LoginController> {
                         padding: const EdgeInsets.symmetric(horizontal: 20),
                         child: Obx(
                           () => controller.isLoading.value
-                              ? const Center(child: CircularProgressIndicator())
+                              ? const Center(child: CircularProgressIndicator(color: MyColors.primaryColor,))
                               : MyButton(
                                   text: "Sign In",
                                   withArrow: false,
@@ -97,7 +97,7 @@ class LoginPage extends GetView<LoginController> {
                           TextButton(
                               onPressed: () {
                                 Get.off(() => const RegistrationPage());
-                                player.dispose();
+                                
                               },
                               child: const Text("SIGN UP",
                                   style:
