@@ -21,6 +21,7 @@ class LoginController extends GetxController {
     passwordController = TextEditingController();
     super.onInit();
     _playSound();
+    
   }
 
   @override
@@ -31,6 +32,7 @@ class LoginController extends GetxController {
 
   void _playSound() async {
     await _audioPlayer.play(AssetSource('sound/soundQaseda.mp3'));
+    await _audioPlayer.setReleaseMode(ReleaseMode.loop);
   }
 
   void _stopSound() {
