@@ -14,7 +14,7 @@ class HomeController extends GetxController {
   @override
   void onInit() {
     homeWidgets.addAll([
-      const OverviewPage(),
+       OverviewPage(),
       const PlacesPage(),
       const MapPage(),]);
     super.onInit();
