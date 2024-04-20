@@ -10,10 +10,9 @@ import '../../registration/pages/registration_page.dart';
 import '../controllers/login_controller.dart';
 
 class LoginPage extends GetView<LoginController> {
-  
   LoginPage({super.key});
   final player = AudioPlayer();
-  
+
   @override
   Widget build(BuildContext context) {
     Get.put(LoginController());
@@ -105,26 +104,6 @@ class LoginPage extends GetView<LoginController> {
                                       TextStyle(color: MyColors.primaryColor))),
                         ],
                       ),
-                      Center(
-                        child: Row(
-                          children: [
-                            IconButton(
-                              onPressed: () {
-                                player
-                                    .play(AssetSource("sound/soundQaseda.mp3"));
-                                player.setVolume(100);
-                              },
-                              icon: const Icon(Icons.play_arrow),
-                            ),
-                            IconButton(
-                              onPressed: () {
-                                player.pause();
-                              },
-                              icon: const Icon(Icons.stop),
-                            ),
-                          ],
-                        ),
-                      )
                     ],
                   ),
                 ),
