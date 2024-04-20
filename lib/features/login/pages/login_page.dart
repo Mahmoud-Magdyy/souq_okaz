@@ -23,7 +23,7 @@ class LoginPage extends GetView<LoginController> {
           Container(
             decoration: const BoxDecoration(
               image: DecorationImage(
-                image: AssetImage("assets/images/test4.jpg",),
+                image: AssetImage("assets/images/splash.gif",),
                 fit: BoxFit.cover,
               ),
             ),

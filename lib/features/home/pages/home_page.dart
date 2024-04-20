@@ -73,8 +73,10 @@ import 'package:google_nav_bar/google_nav_bar.dart';
 
 class HomePage extends GetView<HomeController> {
   final UserModel userModel;
-  const HomePage({super.key, required this.userModel});
+  const HomePage({super.key,required this.userModel});
 
+
+//comment
   @override
   Widget build(BuildContext context) {
     Get.put(HomeController(userModel: userModel));
