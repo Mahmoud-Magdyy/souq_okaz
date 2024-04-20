@@ -11,7 +11,7 @@ class TheatersPage extends GetView<TheatersController> {
     Get.put(TheatersController());
     return Column(
       children: [
-        SizedBox(height: 10,),
+        const SizedBox(height: 10,),
         Container(
             color: Colors.white,
             child: Padding(
@@ -72,7 +72,7 @@ class TheatersPage extends GetView<TheatersController> {
             )
           ],
         ),
-        SizedBox(height: 6,),
+        const SizedBox(height: 6,),
         Card(
           color: Colors.redAccent,
           child: SizedBox(

@@ -19,7 +19,6 @@ class RegistrationController extends GetxController {
     nameController = TextEditingController();
     emailController = TextEditingController();
     passwordController = TextEditingController();
-    // TODO: implement onInit
     super.onInit();
   }
 
