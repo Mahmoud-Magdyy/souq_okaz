@@ -55,14 +55,7 @@ class _OverviewPageState extends State<OverviewPage> {
   Widget build(BuildContext context) {
     return BlocConsumer<GlobalCubit, GlobalState>(
       listener: (context, state) {
-        if (state is ChangeLangLoading) {
-          setState(() {
-            const CircularProgressIndicator();
-          });
-        }
-        if (state is ChangeLangSuccess) {
-          setState(() {});
-        }
+        
       },
       builder: (context, state) {
         return Scaffold(
@@ -88,6 +81,21 @@ class _OverviewPageState extends State<OverviewPage> {
                               onTap: () {
                                 BlocProvider.of<GlobalCubit>(context)
                                     .changeLang('ar');
+                                if (state is ChangeLangLoading) {
+                                  setState(() {
+                                    const Center(
+                                        child:
+                                            CircularProgressIndicator());
+                                  });
+                                }
+                                if (state is ChangeLangSuccess) {
+                                  setState(() {
+                                    
+                                    // Get.reset();
+                                    Get.updateLocale(Locale(BlocProvider.of<GlobalCubit>(context).langCode));
+                                    // Get.appUpdate();
+                                  });
+                                }
                                 setState(() {});
                                 // Implement logic to set app language to Arabic
                                 Get.back();
@@ -98,6 +106,14 @@ class _OverviewPageState extends State<OverviewPage> {
                               onTap: () {
                                 BlocProvider.of<GlobalCubit>(context)
                                     .changeLang('en');
+                                    if (state is ChangeLangSuccess) {
+                                  setState(() {
+                                    
+                                    // Get.reset();
+                                    Get.updateLocale(Locale(BlocProvider.of<GlobalCubit>(context).langCode));
+                                    // Get.appUpdate();
+                                  });
+                                }
 
                                 setState(() {});
                                 // Implement logic to set app language to English
@@ -114,7 +130,14 @@ class _OverviewPageState extends State<OverviewPage> {
                   title: Text(AppStrings.about.trr(context)),
                   trailing: const Icon(Icons.info_outline),
                   onTap: () {
-                    Get.toNamed('/about');
+                   
+                    showDialog(
+                      context: context,
+                      builder: (_) => AlertDialog(
+                        title: Text(AppStrings.about.trr(context)),
+                        content:  Text(AppStrings.aboutUsTitle.trr(context))
+                      ),
+                    );
                   },
                 ),
               ],
