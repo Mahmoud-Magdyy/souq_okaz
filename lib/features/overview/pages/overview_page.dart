@@ -112,6 +112,7 @@ class _OverviewPageState extends State<OverviewPage> {
       ),
       body: Stack(
         children: [
+          Image.asset('assets/images/wallpaper.jpg',width:MediaQuery.of(context).size.width,height:MediaQuery.of(context).size.height),
           SafeArea(
             child: SingleChildScrollView(
               child: Padding(
@@ -169,7 +170,7 @@ class _OverviewPageState extends State<OverviewPage> {
                         textAlign: TextAlign.right,
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 12,
                     ),
                     Divider(
