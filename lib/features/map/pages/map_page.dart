@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:okaz_souq/core/locale/app_loacl.dart';
+import 'package:okaz_souq/core/utils/app_strings.dart';
 
 import '../controllers/map_controller.dart';
 
@@ -11,7 +13,7 @@ class MapPage extends GetView<MapController> {
     Get.put(MapController());
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Souq Map"),
+        title:  Text(AppStrings.soqMap.trr(context)),
       ),
       body: Stack(
         children: [

@@ -66,8 +66,9 @@
 // }
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:okaz_souq/core/locale/app_loacl.dart';
+import 'package:okaz_souq/core/utils/app_strings.dart';
 import '../../../core/shared/models/user_model.dart';
-import '../../../core/shared/styles/my_colors.dart';
 import '../controllers/home_controller.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
@@ -97,18 +98,18 @@ class HomePage extends GetView<HomeController> {
             } catch (e) {}
           },
           // color: Colors.black,
-          tabs: const [
+          tabs:  [
             GButton(
               icon: Icons.home,
-              text: 'Home',
+              text: AppStrings.home.trr(context),
             ),
             GButton(
               icon: Icons.place,
-              text: 'Places',
+              text:AppStrings.places.trr(context),
             ),
             GButton(
               icon: Icons.map,
-              text: 'Map',
+              text: AppStrings.map.trr(context),
             ),
           ]),
       body: Obx(

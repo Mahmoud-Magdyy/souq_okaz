@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:get/get.dart';
+import 'package:okaz_souq/core/locale/app_loacl.dart';
 import 'package:okaz_souq/core/shared/styles/my_colors.dart';
 import 'package:okaz_souq/core/shared/styles/text_styles.dart';
+import 'package:okaz_souq/core/utils/app_strings.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../controllers/restaurants_controller.dart';
@@ -73,7 +75,7 @@ class RestaurantsPage extends GetView<RestaurantsController> {
                                                 .location);
                                             launchUrl(url);
                                           },
-                                          child: const Text("Google Map")),
+                                          child:  Text(AppStrings.googleMap.trr(context))),
                                       ElevatedButton(
                                         clipBehavior: Clip.hardEdge,
                                         style: ButtonStyle(
@@ -96,9 +98,9 @@ class RestaurantsPage extends GetView<RestaurantsController> {
                                               .restaurantList[index].website);
                                           launchUrl(url);
                                         },
-                                        child: const Text(
-                                          "Website",
-                                          style: TextStyle(color: Colors.black),
+                                        child:  Text(
+                                          AppStrings.website.trr(context),
+                                          style: const TextStyle(color: Colors.black),
                                         ),
                                       ),
                                     ],

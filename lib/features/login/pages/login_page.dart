@@ -1,6 +1,8 @@
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:okaz_souq/core/locale/app_loacl.dart';
+import 'package:okaz_souq/core/utils/app_strings.dart';
 import '../../../core/shared/styles/my_colors.dart';
 import '../../../core/shared/styles/text_styles.dart';
 import '../../../core/shared/widgets/my_button.dart';
@@ -40,11 +42,11 @@ class LoginPage extends GetView<LoginController> {
                       const SizedBox(
                         height: 140,
                       ),
-                      const Padding(
-                        padding: EdgeInsets.symmetric(
+                       Padding(
+                        padding: const EdgeInsets.symmetric(
                             horizontal: 34.0, vertical: 32),
                         child: Text(
-                          "Login",
+                          AppStrings.login.trr(context),
                           style: MyTextStyles.hOneTextStyle,
                         ),
                       ),
@@ -56,7 +58,7 @@ class LoginPage extends GetView<LoginController> {
                             horizontal: 34, vertical: 8),
                         child: MyTextField(
                           controller: controller.emailController,
-                          label: "Email",
+                          label: AppStrings.email.trr(context),
                           textInputType: TextInputType.emailAddress,
                           validator: MyValidators.emailValidator,
                         ),
@@ -68,7 +70,7 @@ class LoginPage extends GetView<LoginController> {
                           controller: controller.passwordController,
                           textInputType: TextInputType.visiblePassword,
                           validator: MyValidators.passwordValidator,
-                          label: "Password",
+                          label: AppStrings.password.trr(context),
                         ),
                       ),
                       const SizedBox(
@@ -80,7 +82,7 @@ class LoginPage extends GetView<LoginController> {
                           () => controller.isLoading.value
                               ? const Center(child: CircularProgressIndicator(color: MyColors.primaryColor,))
                               : MyButton(
-                                  text: "Sign In",
+                                  text: AppStrings.signIn.trr(context),
                                   withArrow: false,
                                   onPressed: () => controller.login()),
                         ),
@@ -91,18 +93,18 @@ class LoginPage extends GetView<LoginController> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          const Text(
-                            "Don’t have an Account?",
-                            style: TextStyle(color: Colors.white),
+                           Text(
+                            AppStrings.dontHaveAccount.trr(context),
+                            style: const TextStyle(color: Colors.white),
                           ),
                           TextButton(
                               onPressed: () {
                                 Get.off(() => const RegistrationPage());
                                 
                               },
-                              child: const Text("SIGN UP",
+                              child:  Text(AppStrings.signUp.trr(context),
                                   style:
-                                      TextStyle(color: MyColors.primaryColor))),
+                                      const TextStyle(color: MyColors.primaryColor))),
                         ],
                       ),
                     ],
