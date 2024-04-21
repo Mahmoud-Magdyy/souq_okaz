@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:okaz_souq/core/locale/app_loacl.dart';
+import 'package:okaz_souq/core/utils/app_strings.dart';
 
 import '../../../core/shared/styles/my_colors.dart';
 import '../controllers/places_controller.dart';
@@ -15,7 +17,7 @@ class PlacesPage extends GetView<PlacesController> {
       initialIndex:controller.selectedWidgetIndex.value ,
       child: Scaffold(
           appBar: AppBar(
-            title: const Text("Places"),
+            title:  Text(AppStrings.places.trr(context)),
             bottom:  TabBar(
               indicatorSize: TabBarIndicatorSize.tab,
               indicatorColor: MyColors.primaryColor,
@@ -23,10 +25,10 @@ class PlacesPage extends GetView<PlacesController> {
               onTap: (index){
                 controller.selectedWidgetIndex.value = index;
               },
-              tabs: const [
-                Tab(icon: Icon(Icons.coffee),text: "Restaurants",),
-                Tab(icon: Icon(Icons.theater_comedy_outlined),text: "Theaters",),
-                Tab(icon: Icon(Icons.shopping_cart_outlined),text: "Shops",),
+              tabs:  [
+                Tab(icon: const Icon(Icons.coffee),text: AppStrings.restaurants.trr(context),),
+                Tab(icon: const Icon(Icons.theater_comedy_outlined),text: AppStrings.theaters.trr(context),),
+                Tab(icon: const Icon(Icons.shopping_cart_outlined),text: AppStrings.shops.trr(context),),
               ],
             ),
           ),

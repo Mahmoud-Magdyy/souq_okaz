@@ -51,7 +51,7 @@ class _OverviewPageState extends State<OverviewPage> {
       drawer: Drawer(
         child: ListView(
           children: [
-            const SizedBox(height: 32),
+            const SizedBox(height:32),
             ListTile(
               title: const Text('Language'),
               trailing: const Icon(Icons.language),
@@ -87,6 +87,7 @@ class _OverviewPageState extends State<OverviewPage> {
             ListTile(
               title: const Text('About'),
               trailing: const Icon(Icons.info_outline),
+
               onTap: () {
                 Get.toNamed('/about');
               },
@@ -111,10 +112,6 @@ class _OverviewPageState extends State<OverviewPage> {
       ),
       body: Stack(
         children: [
-          Image.asset(
-            'assets/images/wallpaper.jpg',
-            fit: BoxFit.contain,
-          ),
           SafeArea(
             child: SingleChildScrollView(
               child: Padding(
@@ -282,7 +279,7 @@ class _OverviewPageState extends State<OverviewPage> {
             Center(
               child: Padding(
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+                const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
                 child: Text(
                   textDirection: TextDirection.rtl,
                   poem,
