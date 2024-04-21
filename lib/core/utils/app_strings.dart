@@ -38,6 +38,7 @@
       arabic ='arabic',
       soqOkaz='soqOkaz',
       okazTitle='okazTitle',
-      poets='poets';
+      poets='poets',
+      aboutUsTitle='aboutUsTitle';
       
 }

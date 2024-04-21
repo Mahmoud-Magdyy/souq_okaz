@@ -232,7 +232,7 @@ class _OverviewPageState extends State<OverviewPage> {
         ],
       ),
     );
-  }
+    }
 
   Widget showPardyImage(String poem, String poetry) {
     return Padding(
